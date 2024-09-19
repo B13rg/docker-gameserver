@@ -10,31 +10,48 @@
       "shortname": "ahl",
       "servername": "ahlserver",
       "gamename": "Action Half-Life",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005"
+      }
     },
     "ahl2": {
       "shortname": "ahl2",
       "servername": "ahl2server",
       "gamename": "Action: Source",
-      "distro": "ubuntu-20.04"
+      "distro": "ubuntu-20.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005",
+        "sourcetvport": "27020"
+      }
     },
     "ark": {
       "shortname": "ark",
       "servername": "arkserver",
       "gamename": "ARK: Survival Evolved",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "7777",
+        "queryport": "27015"
+      }
     },
     "arma3": {
       "shortname": "arma3",
       "servername": "arma3server",
       "gamename": "ARMA 3",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "2302"
+      }
     },
     "armar": {
       "shortname": "armar",
       "servername": "armarserver",
       "gamename": "Arma Reforger",
-      "distro": "ubuntu-20.04"
+      "distro": "ubuntu-20.04",
+      "pkgs": " libcurl4"
     },
     "ats": {
       "shortname": "ats",
@@ -52,37 +69,59 @@
       "shortname": "bb",
       "servername": "bbserver",
       "gamename": "BrainBread",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005"
+      }
     },
     "bb2": {
       "shortname": "bb2",
       "servername": "bb2server",
       "gamename": "BrainBread 2",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " libcurl4-gnutls-dev:i386",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005",
+        "sourcetvport": "27020"
+      }
     },
     "bd": {
       "shortname": "bd",
       "servername": "bdserver",
       "gamename": "Base Defense",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005"
+      }
     },
     "bf1942": {
       "shortname": "bf1942",
       "servername": "bf1942server",
       "gamename": "Battlefield 1942",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " libncurses5:i386 libtinfo5:i386"
     },
     "bfv": {
       "shortname": "bfv",
       "servername": "bfvserver",
       "gamename": "Battlefield: Vietnam",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " libncurses5:i386 libstdc++5:i386"
     },
     "bmdm": {
       "shortname": "bmdm",
       "servername": "bmdmserver",
       "gamename": "Black Mesa: Deathmatch",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " libncurses5:i386",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005",
+        "sourcetvport": "27020"
+      }
     },
     "bo": {
       "shortname": "bo",
@@ -94,67 +133,108 @@
       "shortname": "bs",
       "servername": "bsserver",
       "gamename": "Blade Symphony",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005",
+        "sourcetvport": "27020"
+      }
     },
     "bt": {
       "shortname": "bt",
       "servername": "btserver",
       "gamename": "Barotrauma",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " libicu-dev dos2unix libxml2-utils"
     },
     "btl": {
       "shortname": "btl",
       "servername": "btlserver",
       "gamename": "BATTALION: Legacy",
-      "distro": "ubuntu-20.04"
+      "distro": "ubuntu-20.04",
+      "ports": {
+        "port": "7777",
+        "queryport": "7780"
+      }
     },
     "cc": {
       "shortname": "cc",
       "servername": "ccserver",
       "gamename": "Codename CURE",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005",
+        "sourcetvport": "27020"
+      }
     },
     "ck": {
       "shortname": "ck",
       "servername": "ckserver",
       "gamename": "Core Keeper",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " xvfb libxi6",
+      "ports": {
+        "port": "1234"
+      }
     },
     "cmw": {
       "shortname": "cmw",
       "servername": "cmwserver",
       "gamename": "Chivalry: Medieval Warfare",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "7777",
+        "queryport": "7779"
+      }
     },
     "cod": {
       "shortname": "cod",
       "servername": "codserver",
       "gamename": "Call of Duty",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " libstdc++5:i386",
+      "ports": {
+        "port": "28960"
+      }
     },
     "cod2": {
       "shortname": "cod2",
       "servername": "cod2server",
       "gamename": "Call of Duty 2",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " libstdc++5:i386",
+      "ports": {
+        "port": "28960"
+      }
     },
     "cod4": {
       "shortname": "cod4",
       "servername": "cod4server",
       "gamename": "Call of Duty 4",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "28960"
+      }
     },
     "coduo": {
       "shortname": "coduo",
       "servername": "coduoserver",
       "gamename": "Call of Duty: United Offensive",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " libstdc++5:i386",
+      "ports": {
+        "port": "28960"
+      }
     },
     "codwaw": {
       "shortname": "codwaw",
       "servername": "codwawserver",
       "gamename": "Call of Duty: World at War",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "28960"
+      }
     },
     "col": {
       "shortname": "col",
@@ -166,31 +246,54 @@
       "shortname": "cs",
       "servername": "csserver",
       "gamename": "Counter-Strike 1.6",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005"
+      }
     },
     "cs2": {
       "shortname": "cs2",
       "servername": "cs2server",
       "gamename": "Counter-Strike 2",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015"
+      }
     },
     "cscz": {
       "shortname": "cscz",
       "servername": "csczserver",
       "gamename": "Counter-Strike: Condition Zero",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005"
+      }
     },
     "csgo": {
       "shortname": "csgo",
       "servername": "csgoserver",
       "gamename": "Counter-Strike: Global Offensive",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005",
+        "sourcetvport": "27020",
+        "steamport": "26901"
+      }
     },
     "css": {
       "shortname": "css",
       "servername": "cssserver",
       "gamename": "Counter-Strike: Source",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " libtinfo5:i386",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005",
+        "sourcetvport": "27020"
+      }
     },
     "ct": {
       "shortname": "ct",
@@ -202,67 +305,109 @@
       "shortname": "dab",
       "servername": "dabserver",
       "gamename": "Double Action: Boogaloo",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005",
+        "sourcetvport": "27020"
+      }
     },
     "dayz": {
       "shortname": "dayz",
       "servername": "dayzserver",
       "gamename": "DayZ",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "2302"
+      }
     },
     "dmc": {
       "shortname": "dmc",
       "servername": "dmcserver",
       "gamename": "Deathmatch Classic",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005"
+      }
     },
     "dod": {
       "shortname": "dod",
       "servername": "dodserver",
       "gamename": "Day of Defeat",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005"
+      }
     },
     "dodr": {
       "shortname": "dodr",
       "servername": "dodrserver",
       "gamename": "Day of Dragons",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "7777",
+        "queryport": "27015"
+      }
     },
     "dods": {
       "shortname": "dods",
       "servername": "dodsserver",
       "gamename": "Day of Defeat: Source",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005",
+        "sourcetvport": "27020"
+      }
     },
     "doi": {
       "shortname": "doi",
       "servername": "doiserver",
       "gamename": "Day of Infamy",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005",
+        "sourcetvport": "27020"
+      }
     },
     "dst": {
       "shortname": "dst",
       "servername": "dstserver",
       "gamename": "Don't Starve Together",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " libcurl4-gnutls-dev:i386"
     },
     "dys": {
       "shortname": "dys",
       "servername": "dysserver",
       "gamename": "Dystopia",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005",
+        "sourcetvport": "27020"
+      }
     },
     "eco": {
       "shortname": "eco",
       "servername": "ecoserver",
       "gamename": "Eco",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " libgdiplus"
     },
     "em": {
       "shortname": "em",
       "servername": "emserver",
       "gamename": "Empires Mod",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005",
+        "sourcetvport": "27020"
+      }
     },
     "etl": {
       "shortname": "etl",
@@ -280,73 +425,130 @@
       "shortname": "fctr",
       "servername": "fctrserver",
       "gamename": "Factorio",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "34197",
+        "rconport": "34198"
+      }
     },
     "fof": {
       "shortname": "fof",
       "servername": "fofserver",
       "gamename": "Fistful of Frags",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005",
+        "sourcetvport": "27020"
+      }
     },
     "gmod": {
       "shortname": "gmod",
       "servername": "gmodserver",
       "gamename": "Garrys Mod",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " libtinfo5:i386",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005",
+        "sourcetvport": "27020"
+      }
     },
     "hcu": {
       "shortname": "hcu",
       "servername": "hcuserver",
       "gamename": "HYPERCHARGE: Unboxed",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "7777",
+        "queryport": "27015"
+      }
     },
     "hl2dm": {
       "shortname": "hl2dm",
       "servername": "hl2dmserver",
       "gamename": "Half-Life 2: Deathmatch",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005",
+        "sourcetvport": "27020"
+      }
     },
     "hldm": {
       "shortname": "hldm",
       "servername": "hldmserver",
       "gamename": "Half-Life: Deathmatch",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005"
+      }
     },
     "hldms": {
       "shortname": "hldms",
       "servername": "hldmsserver",
       "gamename": "Half-Life Deathmatch: Source",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005",
+        "sourcetvport": "27020"
+      }
     },
     "hw": {
       "shortname": "hw",
       "servername": "hwserver",
       "gamename": "Hurtworld",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " lib32z1",
+      "ports": {
+        "port": "12871",
+        "queryport": "12881"
+      }
     },
     "hz": {
       "shortname": "hz",
       "servername": "hzserver",
       "gamename": "Humanitz",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "7777",
+        "queryport": "27015"
+      }
     },
     "ins": {
       "shortname": "ins",
       "servername": "insserver",
       "gamename": "Insurgency",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005",
+        "sourcetvport": "27020"
+      }
     },
     "inss": {
       "shortname": "inss",
       "servername": "inssserver",
       "gamename": "Insurgency: Sandstorm",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27102",
+        "queryport": "27131",
+        "rconport": "27015"
+      }
     },
     "ios": {
       "shortname": "ios",
       "servername": "iosserver",
       "gamename": "IOSoccer",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005",
+        "sourcetvport": "27020"
+      }
     },
     "jc2": {
       "shortname": "jc2",
@@ -364,7 +566,10 @@
       "shortname": "jk2",
       "servername": "jk2server",
       "gamename": "Jedi Knight II: Jedi Outcast",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27960"
+      }
     },
     "kf": {
       "shortname": "kf",
@@ -376,25 +581,37 @@
       "shortname": "kf2",
       "servername": "kf2server",
       "gamename": "Killing Floor 2",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "queryport": "27015"
+      }
     },
     "l4d": {
       "shortname": "l4d",
       "servername": "l4dserver",
       "gamename": "Left 4 Dead",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005"
+      }
     },
     "l4d2": {
       "shortname": "l4d2",
       "servername": "l4d2server",
       "gamename": "Left 4 Dead 2",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005"
+      }
     },
     "mc": {
       "shortname": "mc",
       "servername": "mcserver",
       "gamename": "Minecraft",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " openjdk-21-jre"
     },
     "mcb": {
       "shortname": "mcb",
@@ -406,31 +623,50 @@
       "shortname": "mh",
       "servername": "mhserver",
       "gamename": "MORDHAU",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "7777",
+        "beaconport": "15000",
+        "queryport": "27015"
+      }
     },
     "mohaa": {
       "shortname": "mohaa",
       "servername": "mohaaserver",
       "gamename": "Medal of Honor: Allied Assault",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " libstdc++5:i386",
+      "ports": {
+        "port": "12203"
+      }
     },
     "mom": {
       "shortname": "mom",
       "servername": "momserver",
       "gamename": "Memories of Mars",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "7777",
+        "beaconport": "15000"
+      }
     },
     "mta": {
       "shortname": "mta",
       "servername": "mtaserver",
       "gamename": "Multi Theft Auto",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " libncursesw5 libxml2-utils"
     },
     "nd": {
       "shortname": "nd",
       "servername": "ndserver",
       "gamename": "Nuclear Dawn",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005",
+        "sourcetvport": "27020"
+      }
     },
     "nec": {
       "shortname": "nec",
@@ -442,43 +678,74 @@
       "shortname": "nmrih",
       "servername": "nmrihserver",
       "gamename": "No More Room in Hell",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " libtinfo5:i386",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005",
+        "sourcetvport": "27020"
+      }
     },
     "ns": {
       "shortname": "ns",
       "servername": "nsserver",
       "gamename": "Natural Selection",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005"
+      }
     },
     "ns2": {
       "shortname": "ns2",
       "servername": "ns2server",
       "gamename": "Natural Selection 2",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " speex libtbb2",
+      "ports": {
+        "port": "27015",
+        "httpport": "8080",
+        "modserverport": "27031"
+      }
     },
     "ns2c": {
       "shortname": "ns2c",
       "servername": "ns2cserver",
       "gamename": "NS2: Combat",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " speex:i386 libtbb2",
+      "ports": {
+        "port": "27015",
+        "httpport": "8080"
+      }
     },
     "ohd": {
       "shortname": "ohd",
       "servername": "ohdserver",
       "gamename": "Operation: Harsh Doorstop",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "7777",
+        "queryport": "27005",
+        "rconport": "7778"
+      }
     },
     "onset": {
       "shortname": "onset",
       "servername": "onsetserver",
       "gamename": "Onset",
-      "distro": "ubuntu-20.04"
+      "distro": "ubuntu-20.04",
+      "pkgs": " libmariadb-dev"
     },
     "opfor": {
       "shortname": "opfor",
       "servername": "opforserver",
       "gamename": "Opposing Force",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005"
+      }
     },
     "pc": {
       "shortname": "pc",
@@ -496,55 +763,84 @@
       "shortname": "pmc",
       "servername": "pmcserver",
       "gamename": "PaperMC",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " openjdk-21-jre"
     },
     "ps": {
       "shortname": "ps",
       "servername": "psserver",
       "gamename": "Post Scriptum",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " libgconf-2-4",
+      "ports": {
+        "port": "10027",
+        "queryport": "10037"
+      }
     },
     "pvkii": {
       "shortname": "pvkii",
       "servername": "pvkiiserver",
       "gamename": "Pirates Vikings & Knights II",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005",
+        "sourcetvport": "27020"
+      }
     },
     "pvr": {
       "shortname": "pvr",
       "servername": "pvrserver",
       "gamename": "Pavlov VR",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " libc++1",
+      "ports": {
+        "port": "7777"
+      }
     },
     "pw": {
       "shortname": "pw",
       "servername": "pwserver",
       "gamename": "Palworld",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "8211",
+        "steamport": "27015"
+      }
     },
     "pz": {
       "shortname": "pz",
       "servername": "pzserver",
       "gamename": "Project Zomboid",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " openjdk-21-jre rng-tools"
     },
     "q2": {
       "shortname": "q2",
       "servername": "q2server",
       "gamename": "Quake 2",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27910"
+      }
     },
     "q3": {
       "shortname": "q3",
       "servername": "q3server",
       "gamename": "Quake 3: Arena",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27960"
+      }
     },
     "q4": {
       "shortname": "q4",
       "servername": "q4server",
       "gamename": "Quake 4",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "28004"
+      }
     },
     "ql": {
       "shortname": "ql",
@@ -556,13 +852,20 @@
       "shortname": "qw",
       "servername": "qwserver",
       "gamename": "Quake World",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27500"
+      }
     },
     "ricochet": {
       "shortname": "ricochet",
       "servername": "ricochetserver",
       "gamename": "Ricochet",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005"
+      }
     },
     "ro": {
       "shortname": "ro",
@@ -574,25 +877,39 @@
       "shortname": "rtcw",
       "servername": "rtcwserver",
       "gamename": "Return to Castle Wolfenstein",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27960"
+      }
     },
     "rust": {
       "shortname": "rust",
       "servername": "rustserver",
       "gamename": "Rust",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " lib32z1",
+      "ports": {
+        "port": "28015",
+        "rconport": "28016",
+        "appport": "28082",
+        "queryport": "28017"
+      }
     },
     "rw": {
       "shortname": "rw",
       "servername": "rwserver",
       "gamename": "Rising World",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " openjdk-21-jre"
     },
     "samp": {
       "shortname": "samp",
       "servername": "sampserver",
       "gamename": "San Andreas Multiplayer",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "7777"
+      }
     },
     "sb": {
       "shortname": "sb",
@@ -604,43 +921,70 @@
       "shortname": "sbots",
       "servername": "sbotsserver",
       "gamename": "StickyBots",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "7777",
+        "queryport": "27015"
+      }
     },
     "scpsl": {
       "shortname": "scpsl",
       "servername": "scpslserver",
       "gamename": "SCP: Secret Laboratory",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " mono-complete",
+      "ports": {
+        "port": "7777"
+      }
     },
     "scpslsm": {
       "shortname": "scpslsm",
       "servername": "scpslsmserver",
       "gamename": "SCP: Secret Laboratory ServerMod",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " mono-complete",
+      "ports": {
+        "port": "7777"
+      }
     },
     "sdtd": {
       "shortname": "sdtd",
       "servername": "sdtdserver",
       "gamename": "7 Days to Die",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " telnet expect libxml2-utils"
     },
     "sf": {
       "shortname": "sf",
       "servername": "sfserver",
       "gamename": "Satisfactory",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "queryport": "15777",
+        "beaconport": "15000",
+        "port": "7777"
+      }
     },
     "sfc": {
       "shortname": "sfc",
       "servername": "sfcserver",
       "gamename": "SourceForts Classic",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " libtinfo5:i386",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005",
+        "sourcetvport": "27020"
+      }
     },
     "sof2": {
       "shortname": "sof2",
       "servername": "sof2server",
       "gamename": "Soldier Of Fortune 2: Gold Edition",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "20100"
+      }
     },
     "sol": {
       "shortname": "sol",
@@ -652,13 +996,18 @@
       "shortname": "squad",
       "servername": "squadserver",
       "gamename": "Squad",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "7787",
+        "queryport": "27165"
+      }
     },
     "st": {
       "shortname": "st",
       "servername": "stserver",
       "gamename": "Stationeers",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " libxml2-utils"
     },
     "stn": {
       "shortname": "stn",
@@ -670,7 +1019,12 @@
       "shortname": "sven",
       "servername": "svenserver",
       "gamename": "Sven Co-op",
-      "distro": "ubuntu-20.04"
+      "distro": "ubuntu-20.04",
+      "pkgs": " libssl1.1:i386 zlib1g:i386",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005"
+      }
     },
     "terraria": {
       "shortname": "terraria",
@@ -682,31 +1036,54 @@
       "shortname": "tf",
       "servername": "tfserver",
       "gamename": "The Front",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "5001",
+        "beaconport": "5002",
+        "shutdownport": "5003",
+        "queryport": "27015"
+      }
     },
     "tf2": {
       "shortname": "tf2",
       "servername": "tf2server",
       "gamename": "Team Fortress 2",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " libcurl4-gnutls-dev:i386",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005",
+        "sourcetvport": "27020"
+      }
     },
     "tfc": {
       "shortname": "tfc",
       "servername": "tfcserver",
       "gamename": "Team Fortress Classic",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005"
+      }
     },
     "ti": {
       "shortname": "ti",
       "servername": "tiserver",
       "gamename": "The Isle",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "7777"
+      }
     },
     "ts": {
       "shortname": "ts",
       "servername": "tsserver",
       "gamename": "The Specialists",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005"
+      }
     },
     "ts3": {
       "shortname": "ts3",
@@ -718,7 +1095,11 @@
       "shortname": "tu",
       "servername": "tuserver",
       "gamename": "Tower Unite",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "7777",
+        "queryport": "27015"
+      }
     },
     "tw": {
       "shortname": "tw",
@@ -730,13 +1111,19 @@
       "shortname": "unt",
       "servername": "untserver",
       "gamename": "Unturned",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015"
+      }
     },
     "ut": {
       "shortname": "ut",
       "servername": "utserver",
       "gamename": "Unreal Tournament",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "7777"
+      }
     },
     "ut2k4": {
       "shortname": "ut2k4",
@@ -748,7 +1135,11 @@
       "shortname": "ut3",
       "servername": "ut3server",
       "gamename": "Unreal Tournament 3",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "7777",
+        "queryport": "6500"
+      }
     },
     "ut99": {
       "shortname": "ut99",
@@ -760,25 +1151,35 @@
       "shortname": "vh",
       "servername": "vhserver",
       "gamename": "Valheim",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " libc6-dev",
+      "ports": {
+        "port": "2456"
+      }
     },
     "vints": {
       "shortname": "vints",
       "servername": "vintsserver",
       "gamename": "Vintage Story",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " aspnetcore-runtime-7.0"
     },
     "vpmc": {
       "shortname": "vpmc",
       "servername": "vpmcserver",
       "gamename": "Velocity Proxy MC",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " openjdk-11-jre"
     },
     "vs": {
       "shortname": "vs",
       "servername": "vsserver",
       "gamename": "Vampire Slayer",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005"
+      }
     },
     "wet": {
       "shortname": "wet",
@@ -790,31 +1191,58 @@
       "shortname": "wf",
       "servername": "wfserver",
       "gamename": "Warfork",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "ports": {
+        "port": "44400",
+        "httpport": "44444"
+      }
     },
     "wmc": {
       "shortname": "wmc",
       "servername": "wmcserver",
       "gamename": "WaterfallMC",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " openjdk-21-jre"
     },
     "wurm": {
       "shortname": "wurm",
       "servername": "wurmserver",
       "gamename": "Wurm Unlimited",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " xvfb",
+      "ports": {
+        "rmiport": "7221",
+        "rmiregport": "7220",
+        "port": "3724",
+        "queryport": "27016"
+      }
     },
     "zmr": {
       "shortname": "zmr",
       "servername": "zmrserver",
       "gamename": "Zombie Master: Reborn",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " libtinfo5:i386",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005",
+        "sourcetvport": "27020"
+      }
     },
     "zps": {
       "shortname": "zps",
       "servername": "zpsserver",
       "gamename": "Zombie Panic! Source",
-      "distro": "ubuntu-22.04"
+      "distro": "ubuntu-22.04",
+      "pkgs": " libtinfo5:i386",
+      "ports": {
+        "port": "27015",
+        "clientport": "27005",
+        "sourcetvport": "27020"
+      }
+    },
+    "steamcmd": {
+      "pkgs": " lib32gcc1 lib32stdc++6 libsdl2-2.0-0:i386 steamcmd"
     }
   }
 }
