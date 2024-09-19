@@ -1,29 +1,8 @@
 #!/bin/bash
 
-echo "Fetching server list"
-curl -o ./data/serverlist.csv "https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/serverlist.csv"
+./fetch-game-data.sh
 
-echo '{"include": {}}' > ./data/shortnamearray.json
-
-# convert csv to json
-while read line; do
-  export shortname=$(echo "$line" | awk -F, '{ print $1 }')
-  export servername=$(echo "$line" | awk -F, '{ print $2 }')
-  export gamename=$(echo "$line" | awk -F, '{ print $3 }')
-  export distro=$(echo "$line" | awk -F, '{ print $4 }')
-
-  yq -iP '.include[strenv(shortname)]={"shortname": strenv(shortname),"servername": strenv(servername),"gamename": strenv(gamename),"distro": strenv(distro)}' ./data/shortnamearray.json -o json
-done < <(tail -n +2 ./data/serverlist.csv)
-
-echo "Found $(yq '.include | keys | length' ./data/shortnamearray.json) items"
-
-# Fetch each distro config
-echo "Fetching distro configs"
-while read distro; do
-  curl -o ./data/${distro}.csv --connect-timeout 10 -s "https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/${distro}.csv"
-done < <(yq -r "[.include.*.distro] | unique[]" ./data/shortnamearray.json)
-
-while read sname; do
+while read -r sname; do
   export gamename=$(yq ".include[strenv(shortname)].gamename" data/shortnamearray.json)
   export shortname=$sname
   echo "Generating Dockerfile.${shortname} (${gamename})"
