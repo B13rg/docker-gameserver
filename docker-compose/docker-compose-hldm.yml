@@ -1,24 +1,26 @@
-version: "3.8"
 services:
   # bind mount example
   linuxgsm-hldm-bind:
     image: gameservermanagers/gameserver:hldm
     # image: ghcr.io/gameservermanagers/gameserver:hldm
+    ports:
+      - '27015:27015' # port
+      - '27005:27005' # clientport
     container_name: hldmserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/hldmserver:/data
-    network_mode: host
 
   # volume example
   linuxgsm-hldm-volume:
     image: gameservermanagers/gameserver:hldm
     # image: ghcr.io/gameservermanagers/gameserver:hldm
     container_name: hldmserver
-    restart: unless-stopped
+    ports:
+      - '27015:27015' # port
+      - '27005:27005' # clientport
     volumes:
       - linuxgsm-hldm:/data
-    network_mode: host
 
 volumes:
   linuxgsm-hldm:

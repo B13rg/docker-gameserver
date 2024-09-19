@@ -1,24 +1,26 @@
-version: "3.8"
 services:
   # bind mount example
   linuxgsm-dodr-bind:
     image: gameservermanagers/gameserver:dodr
     # image: ghcr.io/gameservermanagers/gameserver:dodr
+    ports:
+      - '7777:7777' # port
+      - '27015:27015' # queryport
     container_name: dodrserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/dodrserver:/data
-    network_mode: host
 
   # volume example
   linuxgsm-dodr-volume:
     image: gameservermanagers/gameserver:dodr
     # image: ghcr.io/gameservermanagers/gameserver:dodr
     container_name: dodrserver
-    restart: unless-stopped
+    ports:
+      - '7777:7777' # port
+      - '27015:27015' # queryport
     volumes:
       - linuxgsm-dodr:/data
-    network_mode: host
 
 volumes:
   linuxgsm-dodr:

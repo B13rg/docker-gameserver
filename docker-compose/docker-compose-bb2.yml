@@ -1,24 +1,28 @@
-version: "3.8"
 services:
   # bind mount example
   linuxgsm-bb2-bind:
     image: gameservermanagers/gameserver:bb2
     # image: ghcr.io/gameservermanagers/gameserver:bb2
+    ports:
+      - '27015:27015' # port
+      - '27005:27005' # clientport
+      - '27020:27020' # sourcetvport
     container_name: bb2server
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/bb2server:/data
-    network_mode: host
 
   # volume example
   linuxgsm-bb2-volume:
     image: gameservermanagers/gameserver:bb2
     # image: ghcr.io/gameservermanagers/gameserver:bb2
     container_name: bb2server
-    restart: unless-stopped
+    ports:
+      - '27015:27015' # port
+      - '27005:27005' # clientport
+      - '27020:27020' # sourcetvport
     volumes:
       - linuxgsm-bb2:/data
-    network_mode: host
 
 volumes:
   linuxgsm-bb2:

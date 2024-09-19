@@ -1,24 +1,26 @@
-version: "3.8"
 services:
   # bind mount example
   linuxgsm-pw-bind:
     image: gameservermanagers/gameserver:pw
     # image: ghcr.io/gameservermanagers/gameserver:pw
+    ports:
+      - '8211:8211' # port
+      - '27015:27015' # steamport
     container_name: pwserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/pwserver:/data
-    network_mode: host
 
   # volume example
   linuxgsm-pw-volume:
     image: gameservermanagers/gameserver:pw
     # image: ghcr.io/gameservermanagers/gameserver:pw
     container_name: pwserver
-    restart: unless-stopped
+    ports:
+      - '8211:8211' # port
+      - '27015:27015' # steamport
     volumes:
       - linuxgsm-pw:/data
-    network_mode: host
 
 volumes:
   linuxgsm-pw:

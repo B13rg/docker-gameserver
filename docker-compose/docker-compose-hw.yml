@@ -1,24 +1,26 @@
-version: "3.8"
 services:
   # bind mount example
   linuxgsm-hw-bind:
     image: gameservermanagers/gameserver:hw
     # image: ghcr.io/gameservermanagers/gameserver:hw
+    ports:
+      - '12871:12871' # port
+      - '12881:12881' # queryport
     container_name: hwserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/hwserver:/data
-    network_mode: host
 
   # volume example
   linuxgsm-hw-volume:
     image: gameservermanagers/gameserver:hw
     # image: ghcr.io/gameservermanagers/gameserver:hw
     container_name: hwserver
-    restart: unless-stopped
+    ports:
+      - '12871:12871' # port
+      - '12881:12881' # queryport
     volumes:
       - linuxgsm-hw:/data
-    network_mode: host
 
 volumes:
   linuxgsm-hw:

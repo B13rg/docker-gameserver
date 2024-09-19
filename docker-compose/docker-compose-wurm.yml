@@ -1,24 +1,30 @@
-version: "3.8"
 services:
   # bind mount example
   linuxgsm-wurm-bind:
     image: gameservermanagers/gameserver:wurm
     # image: ghcr.io/gameservermanagers/gameserver:wurm
+    ports:
+      - '7221:7221' # rmiport
+      - '7220:7220' # rmiregport
+      - '3724:3724' # port
+      - '27016:27016' # queryport
     container_name: wurmserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/wurmserver:/data
-    network_mode: host
 
   # volume example
   linuxgsm-wurm-volume:
     image: gameservermanagers/gameserver:wurm
     # image: ghcr.io/gameservermanagers/gameserver:wurm
     container_name: wurmserver
-    restart: unless-stopped
+    ports:
+      - '7221:7221' # rmiport
+      - '7220:7220' # rmiregport
+      - '3724:3724' # port
+      - '27016:27016' # queryport
     volumes:
       - linuxgsm-wurm:/data
-    network_mode: host
 
 volumes:
   linuxgsm-wurm:

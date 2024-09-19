@@ -1,7 +1,5 @@
 #!/bin/bash
 
-./fetch-game-data.sh
-
 while read -r sname; do
   export gamename=$(yq ".include[strenv(shortname)].gamename" data/shortnamearray.json)
   export shortname=$sname

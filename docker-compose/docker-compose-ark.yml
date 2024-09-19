@@ -1,24 +1,26 @@
-version: "3.8"
 services:
   # bind mount example
   linuxgsm-ark-bind:
     image: gameservermanagers/gameserver:ark
     # image: ghcr.io/gameservermanagers/gameserver:ark
+    ports:
+      - '7777:7777' # port
+      - '27015:27015' # queryport
     container_name: arkserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/arkserver:/data
-    network_mode: host
 
   # volume example
   linuxgsm-ark-volume:
     image: gameservermanagers/gameserver:ark
     # image: ghcr.io/gameservermanagers/gameserver:ark
     container_name: arkserver
-    restart: unless-stopped
+    ports:
+      - '7777:7777' # port
+      - '27015:27015' # queryport
     volumes:
       - linuxgsm-ark:/data
-    network_mode: host
 
 volumes:
   linuxgsm-ark:

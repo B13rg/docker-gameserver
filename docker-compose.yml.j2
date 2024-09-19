@@ -1,24 +1,37 @@
-version: "3.8"
 services:
   # bind mount example
   linuxgsm-{{ game.shortname }}-bind:
     image: gameservermanagers/gameserver:{{ game.shortname }}
     # image: ghcr.io/gameservermanagers/gameserver:{{ game.shortname }}
+    {%- if game.ports is defined and game.ports | length > 0 %}
+    ports:
+    {%- for key, port in game.ports.items() %}
+      - '{{port}}:{{port}}' # {{key}}
+    {%- endfor %}
+    {%- else %}
+    # expose all ports directly
+    network_mode: host
+    {%- endif %}
     container_name: {{ game.shortname }}server
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/{{ game.shortname }}server:/data
-    network_mode: host
 
   # volume example
   linuxgsm-{{ game.shortname }}-volume:
     image: gameservermanagers/gameserver:{{ game.shortname }}
     # image: ghcr.io/gameservermanagers/gameserver:{{ game.shortname }}
     container_name: {{ game.shortname }}server
-    restart: unless-stopped
+    {%- if game.ports is defined and game.ports | length > 0 %}
+    ports:
+    {%- for key, port in game.ports.items() %}
+      - '{{port}}:{{port}}' # {{key}}
+    {%- endfor %}
+    {%- else %}
+    network_mode: host
+    {%- endif %}
     volumes:
       - linuxgsm-{{ game.shortname }}:/data
-    network_mode: host
 
 volumes:
   linuxgsm-{{ game.shortname }}:

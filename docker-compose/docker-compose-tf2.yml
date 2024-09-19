@@ -1,24 +1,28 @@
-version: "3.8"
 services:
   # bind mount example
   linuxgsm-tf2-bind:
     image: gameservermanagers/gameserver:tf2
     # image: ghcr.io/gameservermanagers/gameserver:tf2
+    ports:
+      - '27015:27015' # port
+      - '27005:27005' # clientport
+      - '27020:27020' # sourcetvport
     container_name: tf2server
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/tf2server:/data
-    network_mode: host
 
   # volume example
   linuxgsm-tf2-volume:
     image: gameservermanagers/gameserver:tf2
     # image: ghcr.io/gameservermanagers/gameserver:tf2
     container_name: tf2server
-    restart: unless-stopped
+    ports:
+      - '27015:27015' # port
+      - '27005:27005' # clientport
+      - '27020:27020' # sourcetvport
     volumes:
       - linuxgsm-tf2:/data
-    network_mode: host
 
 volumes:
   linuxgsm-tf2:

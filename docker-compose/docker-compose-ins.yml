@@ -1,24 +1,28 @@
-version: "3.8"
 services:
   # bind mount example
   linuxgsm-ins-bind:
     image: gameservermanagers/gameserver:ins
     # image: ghcr.io/gameservermanagers/gameserver:ins
+    ports:
+      - '27015:27015' # port
+      - '27005:27005' # clientport
+      - '27020:27020' # sourcetvport
     container_name: insserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/insserver:/data
-    network_mode: host
 
   # volume example
   linuxgsm-ins-volume:
     image: gameservermanagers/gameserver:ins
     # image: ghcr.io/gameservermanagers/gameserver:ins
     container_name: insserver
-    restart: unless-stopped
+    ports:
+      - '27015:27015' # port
+      - '27005:27005' # clientport
+      - '27020:27020' # sourcetvport
     volumes:
       - linuxgsm-ins:/data
-    network_mode: host
 
 volumes:
   linuxgsm-ins:

@@ -1,24 +1,28 @@
-version: "3.8"
 services:
   # bind mount example
   linuxgsm-ns2-bind:
     image: gameservermanagers/gameserver:ns2
     # image: ghcr.io/gameservermanagers/gameserver:ns2
+    ports:
+      - '27015:27015' # port
+      - '8080:8080' # httpport
+      - '27031:27031' # modserverport
     container_name: ns2server
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/ns2server:/data
-    network_mode: host
 
   # volume example
   linuxgsm-ns2-volume:
     image: gameservermanagers/gameserver:ns2
     # image: ghcr.io/gameservermanagers/gameserver:ns2
     container_name: ns2server
-    restart: unless-stopped
+    ports:
+      - '27015:27015' # port
+      - '8080:8080' # httpport
+      - '27031:27031' # modserverport
     volumes:
       - linuxgsm-ns2:/data
-    network_mode: host
 
 volumes:
   linuxgsm-ns2:

@@ -1,24 +1,23 @@
-version: "3.8"
 services:
   # bind mount example
   linuxgsm-bt-bind:
     image: gameservermanagers/gameserver:bt
     # image: ghcr.io/gameservermanagers/gameserver:bt
+    # expose all ports directly
+    network_mode: host
     container_name: btserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/btserver:/data
-    network_mode: host
 
   # volume example
   linuxgsm-bt-volume:
     image: gameservermanagers/gameserver:bt
     # image: ghcr.io/gameservermanagers/gameserver:bt
     container_name: btserver
-    restart: unless-stopped
+    network_mode: host
     volumes:
       - linuxgsm-bt:/data
-    network_mode: host
 
 volumes:
   linuxgsm-bt:

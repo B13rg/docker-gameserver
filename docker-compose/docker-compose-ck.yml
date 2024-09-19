@@ -1,24 +1,24 @@
-version: "3.8"
 services:
   # bind mount example
   linuxgsm-ck-bind:
     image: gameservermanagers/gameserver:ck
     # image: ghcr.io/gameservermanagers/gameserver:ck
+    ports:
+      - '1234:1234' # port
     container_name: ckserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/ckserver:/data
-    network_mode: host
 
   # volume example
   linuxgsm-ck-volume:
     image: gameservermanagers/gameserver:ck
     # image: ghcr.io/gameservermanagers/gameserver:ck
     container_name: ckserver
-    restart: unless-stopped
+    ports:
+      - '1234:1234' # port
     volumes:
       - linuxgsm-ck:/data
-    network_mode: host
 
 volumes:
   linuxgsm-ck:

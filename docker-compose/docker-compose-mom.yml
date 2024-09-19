@@ -1,24 +1,26 @@
-version: "3.8"
 services:
   # bind mount example
   linuxgsm-mom-bind:
     image: gameservermanagers/gameserver:mom
     # image: ghcr.io/gameservermanagers/gameserver:mom
+    ports:
+      - '7777:7777' # port
+      - '15000:15000' # beaconport
     container_name: momserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/momserver:/data
-    network_mode: host
 
   # volume example
   linuxgsm-mom-volume:
     image: gameservermanagers/gameserver:mom
     # image: ghcr.io/gameservermanagers/gameserver:mom
     container_name: momserver
-    restart: unless-stopped
+    ports:
+      - '7777:7777' # port
+      - '15000:15000' # beaconport
     volumes:
       - linuxgsm-mom:/data
-    network_mode: host
 
 volumes:
   linuxgsm-mom:

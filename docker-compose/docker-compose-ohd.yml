@@ -1,24 +1,28 @@
-version: "3.8"
 services:
   # bind mount example
   linuxgsm-ohd-bind:
     image: gameservermanagers/gameserver:ohd
     # image: ghcr.io/gameservermanagers/gameserver:ohd
+    ports:
+      - '7777:7777' # port
+      - '27005:27005' # queryport
+      - '7778:7778' # rconport
     container_name: ohdserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/ohdserver:/data
-    network_mode: host
 
   # volume example
   linuxgsm-ohd-volume:
     image: gameservermanagers/gameserver:ohd
     # image: ghcr.io/gameservermanagers/gameserver:ohd
     container_name: ohdserver
-    restart: unless-stopped
+    ports:
+      - '7777:7777' # port
+      - '27005:27005' # queryport
+      - '7778:7778' # rconport
     volumes:
       - linuxgsm-ohd:/data
-    network_mode: host
 
 volumes:
   linuxgsm-ohd:

@@ -1,24 +1,23 @@
-version: "3.8"
 services:
   # bind mount example
   linuxgsm-eco-bind:
     image: gameservermanagers/gameserver:eco
     # image: ghcr.io/gameservermanagers/gameserver:eco
+    # expose all ports directly
+    network_mode: host
     container_name: ecoserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/ecoserver:/data
-    network_mode: host
 
   # volume example
   linuxgsm-eco-volume:
     image: gameservermanagers/gameserver:eco
     # image: ghcr.io/gameservermanagers/gameserver:eco
     container_name: ecoserver
-    restart: unless-stopped
+    network_mode: host
     volumes:
       - linuxgsm-eco:/data
-    network_mode: host
 
 volumes:
   linuxgsm-eco:

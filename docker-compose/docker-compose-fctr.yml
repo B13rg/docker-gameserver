@@ -1,24 +1,26 @@
-version: "3.8"
 services:
   # bind mount example
   linuxgsm-fctr-bind:
     image: gameservermanagers/gameserver:fctr
     # image: ghcr.io/gameservermanagers/gameserver:fctr
+    ports:
+      - '34197:34197' # port
+      - '34198:34198' # rconport
     container_name: fctrserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/fctrserver:/data
-    network_mode: host
 
   # volume example
   linuxgsm-fctr-volume:
     image: gameservermanagers/gameserver:fctr
     # image: ghcr.io/gameservermanagers/gameserver:fctr
     container_name: fctrserver
-    restart: unless-stopped
+    ports:
+      - '34197:34197' # port
+      - '34198:34198' # rconport
     volumes:
       - linuxgsm-fctr:/data
-    network_mode: host
 
 volumes:
   linuxgsm-fctr:
