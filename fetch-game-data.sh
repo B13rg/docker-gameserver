@@ -1,7 +1,8 @@
 #!/bin/bash
 
 echo "Fetching server list"
-# curl -o ./data/serverlist.csv "https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/serverlist.csv"
+curl -o ./data/serverlist.csv "https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/serverlist.csv"
+
 export conf="./data/shortnamearray.json"
 echo '{"include": {}}' > $conf
 
@@ -19,8 +20,8 @@ echo "Found $(yq '.include | keys | length' ${conf}) items"
 
 echo "Fetching distro package lists"
 while read -r distro; do
-#   curl -o "./data/${distro}.csv" "https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/${distro}.csv"
-#   # load into conf file
+  curl -o "./data/${distro}.csv" "https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/${distro}.csv"
+  # load into conf file
   while read -r line; do
     # add package lists to config
     export shortname=$(echo $line | awk -F "," '{print $1}')
@@ -28,7 +29,7 @@ while read -r distro; do
     if [ -n "${pkgs}" ]; then
       yq -iP '.include[strenv(shortname)].pkgs=strenv(pkgs)' ./data/shortnamearray.json -o json
     fi
-  done < <(tail -n +2 ./data/${distro}.csv)
+  done < <(tail -n +3 ./data/${distro}.csv)
   # first line all
   # second line steamcmd
 done < <(yq -r '[.include.*.distro] | unique[]' ${conf})
@@ -36,7 +37,7 @@ done < <(yq -r '[.include.*.distro] | unique[]' ${conf})
 echo "Fetching server configs"
 while read -r server; do
   mkdir -p ./data/server_cfg
-  #curl -o "./data/server_cfg/${server}.cfg" "https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/config-default/config-lgsm/${server}server/_default.cfg"
+  curl -o "./data/server_cfg/${server}.cfg" "https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/config-default/config-lgsm/${server}server/_default.cfg"
   # load port configs into conf file
   while read -r line; do
     export portid=$(echo $line | awk -F "=" '{print $1}')
