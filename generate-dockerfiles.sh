@@ -17,6 +17,12 @@ done < <(tail -n +2 ./data/serverlist.csv)
 
 echo "Found $(yq '.include | keys | length' ./data/shortnamearray.json) items"
 
+# Fetch each distro config
+echo "Fetching distro configs"
+while read distro; do
+  curl -o ./data/${distro}.csv --connect-timeout 10 -s "https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/${distro}.csv"
+done < <(yq -r "[.include.*.distro] | unique[]" ./data/shortnamearray.json)
+
 while read sname; do
   export gamename=$(yq ".include[strenv(shortname)].gamename" data/shortnamearray.json)
   export shortname=$sname

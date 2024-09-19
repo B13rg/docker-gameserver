@@ -6,13 +6,15 @@
 
 FROM gameservermanagers/linuxgsm:{{ game.distro }}
 LABEL maintainer="LinuxGSM <me@danielgibbs.co.uk>"
-ARG SHORTNAME={{ game.shortname }}
-ENV GAMESERVER={{ game.shortname }}server
+ARG SHORTNAME='{{ game.shortname }}'
+ENV GAMESERVER='{{ game.shortname }}server'
 
 WORKDIR /app
 
+COPY data/{{game.distro}}.csv {{game.distro}}.csv
+
 ## Auto install game server requirements
-RUN depshortname=$(curl --connect-timeout 10 -s https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/{{ game.distro }}.csv |awk -v shortname="{{ game.shortname }}" -F, '$1==shortname {$1=""; print $0}') \
+RUN depshortname=$(cat {{ game.distro }}.csv |awk -v shortname="{{ game.shortname }}" -F, '$1==shortname {$1=""; print $0}') \
   && if [ -n "${depshortname}" ]; then \
   echo "**** Install ${depshortname} ****" \
   && apt-get update \

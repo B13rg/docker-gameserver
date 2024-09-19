@@ -6,13 +6,15 @@
 
 FROM gameservermanagers/linuxgsm:ubuntu-22.04
 LABEL maintainer="LinuxGSM <me@danielgibbs.co.uk>"
-ARG SHORTNAME=opfor
-ENV GAMESERVER=opforserver
+ARG SHORTNAME='opfor'
+ENV GAMESERVER='opforserver'
 
 WORKDIR /app
 
+COPY data/ubuntu-22.04.csv ubuntu-22.04.csv
+
 ## Auto install game server requirements
-RUN depshortname=$(curl --connect-timeout 10 -s https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/ubuntu-22.04.csv |awk -v shortname="opfor" -F, '$1==shortname {$1=""; print $0}') \
+RUN depshortname=$(cat ubuntu-22.04.csv |awk -v shortname="opfor" -F, '$1==shortname {$1=""; print $0}') \
   && if [ -n "${depshortname}" ]; then \
   echo "**** Install ${depshortname} ****" \
   && apt-get update \
