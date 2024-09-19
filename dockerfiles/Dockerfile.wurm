@@ -24,5 +24,13 @@ RUN echo "**** Install  xvfb ****" \
 HEALTHCHECK --interval=1m --timeout=1m --start-period=2m --retries=1 CMD /app/entrypoint-healthcheck.sh || exit 1
 
 RUN date > /build-time.txt
+# rmiport
+EXPOSE 7221
+# rmiregport
+EXPOSE 7220
+# port
+EXPOSE 3724
+# queryport
+EXPOSE 27016
 
 ENTRYPOINT ["/bin/bash", "./entrypoint.sh"]

@@ -24,5 +24,11 @@ RUN echo "**** Install  speex libtbb2 ****" \
 HEALTHCHECK --interval=1m --timeout=1m --start-period=2m --retries=1 CMD /app/entrypoint-healthcheck.sh || exit 1
 
 RUN date > /build-time.txt
+# port
+EXPOSE 27015
+# httpport
+EXPOSE 8080
+# modserverport
+EXPOSE 27031
 
 ENTRYPOINT ["/bin/bash", "./entrypoint.sh"]

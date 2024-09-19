@@ -18,5 +18,11 @@ COPY data/ubuntu-20.04.csv ubuntu-20.04.csv
 HEALTHCHECK --interval=1m --timeout=1m --start-period=2m --retries=1 CMD /app/entrypoint-healthcheck.sh || exit 1
 
 RUN date > /build-time.txt
+# port
+EXPOSE 27015
+# clientport
+EXPOSE 27005
+# sourcetvport
+EXPOSE 27020
 
 ENTRYPOINT ["/bin/bash", "./entrypoint.sh"]

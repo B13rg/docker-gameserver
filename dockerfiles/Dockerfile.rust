@@ -24,5 +24,13 @@ RUN echo "**** Install  lib32z1 ****" \
 HEALTHCHECK --interval=1m --timeout=1m --start-period=2m --retries=1 CMD /app/entrypoint-healthcheck.sh || exit 1
 
 RUN date > /build-time.txt
+# port
+EXPOSE 28015
+# rconport
+EXPOSE 28016
+# appport
+EXPOSE 28082
+# queryport
+EXPOSE 28017
 
 ENTRYPOINT ["/bin/bash", "./entrypoint.sh"]

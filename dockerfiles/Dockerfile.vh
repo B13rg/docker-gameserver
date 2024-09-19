@@ -24,5 +24,7 @@ RUN echo "**** Install  libc6-dev ****" \
 HEALTHCHECK --interval=1m --timeout=1m --start-period=2m --retries=1 CMD /app/entrypoint-healthcheck.sh || exit 1
 
 RUN date > /build-time.txt
+# port
+EXPOSE 2456
 
 ENTRYPOINT ["/bin/bash", "./entrypoint.sh"]

@@ -26,5 +26,11 @@ RUN echo "**** Install {{game.pkgs}} ****" \
 HEALTHCHECK --interval=1m --timeout=1m --start-period=2m --retries=1 CMD /app/entrypoint-healthcheck.sh || exit 1
 
 RUN date > /build-time.txt
+{%- if game.ports is defined and game.ports | length > 0 %}
+{%- for key, port in game.ports.items() %}
+# {{key}}
+EXPOSE {{port}}
+{%- endfor %}
+{%- endif %}
 
 ENTRYPOINT ["/bin/bash", "./entrypoint.sh"]
