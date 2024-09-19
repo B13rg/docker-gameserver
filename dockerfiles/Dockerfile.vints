@@ -14,15 +14,12 @@ WORKDIR /app
 COPY data/ubuntu-22.04.csv ubuntu-22.04.csv
 
 ## Auto install game server requirements
-RUN depshortname=$(cat ubuntu-22.04.csv |awk -v shortname="vints" -F, '$1==shortname {$1=""; print $0}') \
-  && if [ -n "${depshortname}" ]; then \
-  echo "**** Install ${depshortname} ****" \
+RUN echo "**** Install  aspnetcore-runtime-7.0 ****" \
   && apt-get update \
-  && apt-get install -y ${depshortname} \
+  && apt-get install -y  aspnetcore-runtime-7.0 \
   && apt-get -y autoremove \
   && apt-get clean \
-  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*; \
-  fi
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*;
 
 HEALTHCHECK --interval=1m --timeout=1m --start-period=2m --retries=1 CMD /app/entrypoint-healthcheck.sh || exit 1
 

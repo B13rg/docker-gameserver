@@ -1240,9 +1240,6 @@
         "clientport": "27005",
         "sourcetvport": "27020"
       }
-    },
-    "steamcmd": {
-      "pkgs": " lib32gcc1 lib32stdc++6 libsdl2-2.0-0:i386 steamcmd"
     }
   }
 }

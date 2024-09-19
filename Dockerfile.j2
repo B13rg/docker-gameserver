@@ -14,15 +14,14 @@ WORKDIR /app
 COPY data/{{game.distro}}.csv {{game.distro}}.csv
 
 ## Auto install game server requirements
-RUN depshortname=$(cat {{ game.distro }}.csv |awk -v shortname="{{ game.shortname }}" -F, '$1==shortname {$1=""; print $0}') \
-  && if [ -n "${depshortname}" ]; then \
-  echo "**** Install ${depshortname} ****" \
+{%- if game.pkgs is defined  %}
+RUN echo "**** Install {{game.pkgs}} ****" \
   && apt-get update \
-  && apt-get install -y ${depshortname} \
+  && apt-get install -y {{game.pkgs}} \
   && apt-get -y autoremove \
   && apt-get clean \
-  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*; \
-  fi
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*;
+{%- endif %}
 
 HEALTHCHECK --interval=1m --timeout=1m --start-period=2m --retries=1 CMD /app/entrypoint-healthcheck.sh || exit 1
 
